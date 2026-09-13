@@ -1,0 +1,2 @@
+# The app itself uses Python's bundled Tkinter. Pillow enables transparent PNG export.
+Pillow>=10.4,<13

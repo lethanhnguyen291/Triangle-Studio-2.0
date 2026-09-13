@@ -1,0 +1,39 @@
+﻿SỬA LỖI "Unable to create process ... python3.14t.exe"
+
+Lỗi này xảy ra trước khi ứng dụng chạy: Python Launcher đang trỏ tới
+một tệp Python không tồn tại hoặc không khởi chạy được.
+
+1. Giải nén toàn bộ gói mới vào thư mục mới, hoặc chép đè các file .bat
+   trong thư mục ứng dụng hiện tại. Phải có TIM_PYTHON.bat cùng thư mục.
+2. Nhấp đúp CAI_DAT.bat.
+   - Kiểm tra môi trường .venv đang có.
+   - Tìm Python trên PATH và trong danh sách py -0p.
+   - Bỏ qua tệp không tồn tại/không chạy được; kiểm tra python.exe nằm
+     cùng thư mục với đường dẫn Launcher hỏng.
+   - Tìm thêm ở một số thư mục cài Python thông thường.
+   - Chỉ dùng Python 3.10 trở lên có Tkinter và venv.
+   - Giữ lại môi trường .venv bị lỗi trong .venv.backup-... trước khi tạo mới.
+3. Khi hiện "Da cai xong", mở CHAY_UNG_DUNG.bat.
+
+Nếu không tìm được Python, file cài đặt sẽ in kết quả py -0p và where python.
+Chụp nguyên cửa sổ đó để kiểm tra. Công cụ không tự cài Python hoặc sửa
+Registry, PATH hay Python Launcher của Windows.
+
+NẾU BẠN BIẾT CHÍNH XÁC ĐƯỜNG DẪN PYTHON ĐANG CHẠY ĐƯỢC
+
+Mở CMD ngay trong thư mục ứng dụng, chạy hai lệnh sau. Thay đường dẫn ví dụ
+bằng đường dẫn thật của bạn (không sao chép nguyên đường dẫn ví dụ):
+
+set "TRIANGLE_PYTHON=C:\DuongDanThat\python.exe"
+CAI_DAT.bat
+
+Có thể tìm đường dẫn trình thông dịch trong phần Python Interpreter của
+PyCharm/VS Code. Không chọn python3.14t.exe nếu tệp đó đã bị mất.
+
+Nếu máy không còn Python hoạt động, cài hoặc Repair Python từ:
+https://www.python.org/downloads/windows/
+Chọn Tcl/Tk và Add python.exe to PATH, rồi chạy CAI_DAT.bat lại.
+
+Ghi nhận bản sửa: đã rà soát script và kiểm tra gói ZIP; chưa chạy script
+này trên Windows thực tế. 16 kiểm thử ứng dụng ở bản trước vẫn giữ nguyên,
+không phải kiểm thử thực thi các file BAT.
